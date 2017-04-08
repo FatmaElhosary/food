@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class size extends Model
 {
     protected $fillable = [
-         'size', 'price','item_id'
+         'size', 'price','items_id'
     ];
     
     public function item()
     {
-        return $this->belongsTo('laravel5\item');
+        return $this->belongsTo('laravel5\item','items_id','id');
     }
   public function user()
  {

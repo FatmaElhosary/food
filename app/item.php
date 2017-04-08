@@ -11,7 +11,7 @@ class item extends Model
     ];
      public function size()
     {
-        return $this->hasMany('laravel5\size');
+        return $this->hasMany('laravel5\size','items_id','id');
     }
   
  public function user()

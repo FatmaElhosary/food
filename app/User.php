@@ -29,5 +29,8 @@ class User extends Authenticatable
      public function items()
     {
         return $this->hasMany('laravel5\item');
+      //return $this->belongsToMany('laravel5\item');
+
     }
+ 
 }
