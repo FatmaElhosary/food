@@ -5,13 +5,14 @@ use laravel5\item;
 use laravel5\size;
 use laravel5\User;
 use Request;
+use laravel5\Http\Requests\AddItemRequest;
 use Auth;
 //use AddRequest;
 //use App\item;
 class itemsController extends Controller
 {
     public function index(){
-     // $items=item::all();
+     //$items=item::all();
       $items = item::with('size')->get();
     //var_dump($items); die;
      //return $items;
@@ -24,33 +25,23 @@ if(Auth::user()->role == 'admin')
       return view('items.create');
 
     }
+    //AddItemRequest $rquest
+    
      public function store(){
-       //$input=Request::get('name');
-      $input=Request::all();
-      //$item->save();
-
-      //$item->size()->save($size);
-
-      //$item->size()->save(new size($input));
-       return $input;
-//     $item->name=Request::get('name');
-//     $item->description=Request::get('description');
-//     $item->user_id=Request::get('user_id');
-     //$size->size=Request::get('size');
-     //$size->price=Request::get('price');
-      //item::create($input);
-      //return $input;
-//         $item = new item();
-//         $item->user_id = Request::get('user_id');
-//        $item->name = Request::get('name');
-//        $item->description = Request::get('description');
-//      
-//        $item->size = new size();
-//        $item->size->size = Request::get('size');
-//        $item->size->price = Request::get('price');
-//        $item->push();
-//        return "item Saved";
-
+     //$input=Request::get('name');
+      //$input=Request::all();
+       //return $input;
       //return redirect('items'); 
+         $insertArray = array('name' => Request::get('name'),'description'=>Request::get('description'));
+
+         $saveResult = item::create($insertArray);
+
+         $last_id = $saveResult->id;
+        
+         $insertArray = array('size' => Request::get('size'),'price'=> Request::get('price'),'items_id'=>$last_id);
+
+         $insersize = size::create($insertArray);
+
+         return redirect('items');
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace laravel5\Providers;
-
+//use App\Policies\TaskPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 

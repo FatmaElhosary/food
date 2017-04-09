@@ -1,9 +1,8 @@
 @extends('app')
 @section('content')
 <h1>Items</h1>
- @if(Auth::user()->role=='admin')
   <a href="{{  route('items.create') }}" class="btn btn-primary">ADD Items</a>
-  @endif
+  
 <div class="row">  
 <div class="col-lg-4">  
 @foreach ($items as $item)
