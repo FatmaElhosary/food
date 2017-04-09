@@ -21,24 +21,26 @@ class itemsController extends Controller
     }
     
     public function create(){
-if(Auth::user()->role == 'admin')
-      return view('items.create');
+  if(Auth::user()->role=='admin')
+  return view('items.create');
 
     }
     //AddItemRequest $rquest
     
-     public function store(){
+     public function store(AddItemRequest $insertArray){
      //$input=Request::get('name');
       //$input=Request::all();
-       //return $input;
+       //return $input; die;
       //return redirect('items'); 
-         $insertArray = array('name' => Request::get('name'),'description'=>Request::get('description'));
-
+      // $user = Auth::user();
+         $insertArray = array('user_id' =>Request::get('user_id') ,'name' => Request::get('name'),'description'=>Request::get('description'));
+        //var_dump($userId)); 
+        
          $saveResult = item::create($insertArray);
 
          $last_id = $saveResult->id;
         
-         $insertArray = array('size' => Request::get('size'),'price'=> Request::get('price'),'items_id'=>$last_id);
+         $insertArray = array('smallprice' => Request::get('smallprice'),'mediumprice'=> Request::get('mediumprice'),'largeprice'=> Request::get('largeprice'),'items_id'=>$last_id);
 
          $insersize = size::create($insertArray);
 

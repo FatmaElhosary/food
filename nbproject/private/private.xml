@@ -5,7 +5,6 @@
         <group>
             <file>file:/G:/food/laravel5/resources/views/items/create.blade.php</file>
             <file>file:/G:/food/laravel5/app/Http/Controllers/itemsController.php</file>
-            <file>file:/G:/food/laravel5/routes/web.php</file>
             <file>file:/G:/food/laravel5/resources/views/items/index.blade.php</file>
         </group>
     </open-files>
