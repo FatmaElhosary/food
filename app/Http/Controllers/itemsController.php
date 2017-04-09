@@ -6,11 +6,19 @@ use laravel5\size;
 use laravel5\User;
 use Request;
 use laravel5\Http\Requests\AddItemRequest;
+//use Illuminate\Contracts\Auth\Guard;
+
 use Auth;
 //use AddRequest;
 //use App\item;
 class itemsController extends Controller
 {
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
+    
+    
     public function index(){
      //$items=item::all();
       $items = item::with('size')->latest()->get();
@@ -21,7 +29,13 @@ class itemsController extends Controller
     }
     
     public function create(){
+  //if(Auth::user()->role=='admin')
+        //return redirect('login');
+  if(Auth::guest()) {
+      return redirect('items');
+  } 
   if(Auth::user()->role=='admin')
+   //$this->middleware('auth');
   return view('items.create');
 
     }
@@ -45,5 +59,10 @@ class itemsController extends Controller
          $insersize = size::create($insertArray);
 
          return redirect('items');
+    }
+     public function AddToCart(){
+     $input=Request::all();
+     var_dump($input); die;
+     return $input; 
     }
 }

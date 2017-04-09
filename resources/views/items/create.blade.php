@@ -23,7 +23,7 @@
 
 </div>
 <div class="form-group">
-    {!!Form::submit('Add Item',['class' =>'btn btn-primary form-control'])!!}
+    {!!Form::submit('Add To Cart',['class' =>'btn btn-primary form-control'])!!}
 </div>
 {!! Form::close() !!}
 @if ($errors->any())
