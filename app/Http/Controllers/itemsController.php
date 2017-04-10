@@ -54,12 +54,14 @@ class itemsController extends Controller
 
          $last_id = $saveResult->id;
         
-         $insertArray = array('smallprice' => Request::get('smallprice'),'mediumprice'=> Request::get('mediumprice'),'largeprice'=> Request::get('largeprice'),'items_id'=>$last_id);
+         $insertArray = array('size' => Request::get('size'),'price'=> Request::get('price'),'items_id'=>$last_id);
 
          $insersize = size::create($insertArray);
 
          return redirect('items');
     }
+    
+    
      public function AddToCart(){
      //$input=Request::all();
      //var_dump($input); die;
