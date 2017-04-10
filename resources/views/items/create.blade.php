@@ -14,16 +14,14 @@
      </div>
 <div class="form-group">
 
-{!!Form::label('smallprice','Price small:')!!}
-{!!Form::number('smallprice', '0')!!}
-{!!Form::label('mediumprice','Price medium:')!!}
-{!!Form::number('mediumprice', '0')!!}
-{!!Form::label('largeprice','Price large:')!!}
-{!!Form::number('largeprice', '0')!!}
+{!!Form::label('size','Sizes:')!!}
+  {!!Form::select('size', ['large' => 'Large', 'medium' => 'Medium','small' => 'Small'], 'small')!!}
+{!!Form::label('price','Price :')!!}
+{!!Form::number('price', '0')!!}
 
 </div>
 <div class="form-group">
-    {!!Form::submit('Add To Cart',['class' =>'btn btn-primary form-control'])!!}
+    {!!Form::submit('Add',['class' =>'btn btn-primary form-control'])!!}
 </div>
 {!! Form::close() !!}
 @if ($errors->any())

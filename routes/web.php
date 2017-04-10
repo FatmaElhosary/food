@@ -13,5 +13,8 @@ Route::get('items/create','itemsController@create');
 Route::post('items','itemsController@store');
 Route::resource('items', 'itemsController');
 Auth::routes();
+Route::get('/addProduct/{productId}', 'CartController@addItem');
+Route::get('/removeItem/{productId}', 'CartController@removeItem');
+Route::get('/cart', 'CartController@showCart');
 
 //Route::get('/home', 'HomeController@index');

@@ -61,8 +61,19 @@ class itemsController extends Controller
          return redirect('items');
     }
      public function AddToCart(){
-     $input=Request::all();
-     var_dump($input); die;
-     return $input; 
+     //$input=Request::all();
+     //var_dump($input); die;
+         
+    $insertArray = array('user_id' => Request::get('user_id'),'name'=> Request::get('name'),'size'=> Request::get('size'),'amount'=> Request::get('amount'));
+     //return $insertArray['user_id']; 
+    //return redirect('items',compact('$insertArray'));
+    //return redirect()->back()->with([$insertArray]);
+//    foreach ($insertArray as $insertArray)
+//    {
+//        
+//    }
+    return $insertArray;
     }
+    
+    
 }

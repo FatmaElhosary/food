@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSizesTable extends Migration
+class AddCartIdToCartItems extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateSizesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sizes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('size');
-            $table->float('price');
-            $table->timestamps();
+         Schema::table('cart_items', function(Blueprint $table) {
+            $table->integer('cart_id')->nullable()->after('id')->unsigned();
+            $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateSizesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sizes');
+        //
     }
 }
