@@ -13,11 +13,12 @@
     {!!Form::textarea('description',null,['class'=> 'form-control'])!!}
      </div>
 <div class="form-group">
-
-{!!Form::label('size','Sizes:')!!}
-  {!!Form::select('size', ['large' => 'Large', 'medium' => 'Medium','small' => 'Small'], 'small')!!}
-{!!Form::label('price','Price :')!!}
-{!!Form::number('price', '0')!!}
+{!!Form::label('price','Small Price  :')!!}
+{!!Form::number('price1', '0')!!}
+{!!Form::label('price','Medium Price :')!!}
+{!!Form::number('price2', '0')!!}
+{!!Form::label('price','Large Price :')!!}
+{!!Form::number('price3', '0')!!}
 
 </div>
 <div class="form-group">

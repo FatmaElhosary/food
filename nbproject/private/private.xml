@@ -6,6 +6,8 @@
             <file>file:/G:/food/laravel5/resources/views/items/create.blade.php</file>
             <file>file:/G:/food/laravel5/app/Http/Controllers/itemsController.php</file>
             <file>file:/G:/food/laravel5/resources/views/items/index.blade.php</file>
+            <file>file:/G:/food/laravel5/app/Cart.php</file>
+            <file>file:/G:/food/laravel5/app/Http/Controllers/CartController.php</file>
         </group>
     </open-files>
 </project-private>

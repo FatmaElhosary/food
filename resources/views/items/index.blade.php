@@ -52,7 +52,7 @@
 
         <div class="col-lg-4">
 
-            <h1>latest order</h1>
+           
         </div>
     </div>
 </div>

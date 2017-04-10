@@ -54,7 +54,13 @@ class itemsController extends Controller
 
          $last_id = $saveResult->id;
         
-         $insertArray = array('size' => Request::get('size'),'price'=> Request::get('price'),'items_id'=>$last_id);
+         $insertArray = array('size' => 'small','price'=> Request::get('price1'),'items_id'=>$last_id);
+
+         $insersize = size::create($insertArray);
+         $insertArray = array('size' => 'medium','price'=> Request::get('price2'),'items_id'=>$last_id);
+
+         $insersize = size::create($insertArray);
+         $insertArray = array('size' => 'large','price'=> Request::get('price3'),'items_id'=>$last_id);
 
          $insersize = size::create($insertArray);
 
@@ -63,17 +69,8 @@ class itemsController extends Controller
     
     
      public function AddToCart(){
-     //$input=Request::all();
-     //var_dump($input); die;
-         
+        
     $insertArray = array('user_id' => Request::get('user_id'),'name'=> Request::get('name'),'size'=> Request::get('size'),'amount'=> Request::get('amount'));
-     //return $insertArray['user_id']; 
-    //return redirect('items',compact('$insertArray'));
-    //return redirect()->back()->with([$insertArray]);
-//    foreach ($insertArray as $insertArray)
-//    {
-//        
-//    }
     return $insertArray;
     }
     
