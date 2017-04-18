@@ -17,6 +17,7 @@
                 <th>Product</th>
                 <th></th>
                 <th class="text-center"></th>
+                 <th>Size</th>
                 <th class="text-center">Total</th>
                 <th> </th>
             </tr>
@@ -26,11 +27,15 @@
             <tr>
                 <td class="col-sm-8 col-md-6">
                     <div class="media">
-                        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{$item->product->imageurl}}" style="width: 100px; height: 72px;"> </a>
+                        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="https://goo.gl/F015iq" style="width: 100px; height: 72px;"> </a>
                         <div class="media-body">
                             <h4 class="media-heading"><a href="#">{{$item->data->name}}</a></h4>
                         </div>
                     </div></td>
+                    
+                      <td class="col-sm-1 col-md-1 text-center"><strong>${{$item->product->size}}</strong></td>  
+                     
+                          
                 <td class="col-sm-1 col-md-1" style="text-align: center">
                 </td>
                 <td class="col-sm-1 col-md-1 text-center"></td>
@@ -46,7 +51,7 @@
 
             <tr>
                 <td>   </td>
-                <td>   </td>
+                <td> </td>
                 <td>   </td>
                 <td><h3>Total</h3></td>
                 <td class="text-right"><h3><strong>${{$total}}</strong></h3></td>

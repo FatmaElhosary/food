@@ -45,16 +45,18 @@ class CartController extends Controller
         }
 
         $items = $cart->cartItems;
-
+       // var_dump($items)->array;die;
         $total=0;
         foreach($items as $item){
-
+            @$size=$item->product->size;
             @$total+=$item->product->price;
+           ///// where('size', $size)
+          // var_dump($item->product->price->where('size', $size)); die;
             @$name=$item->data->name;
         }
        
            
-        return view('cart.view',['items'=>$items,'total'=>$total,'name'=>@$name]);
+        return view('cart.view',['items'=>$items,'size'=>'@size','total'=>$total,'name'=>@$name]);
     }
 
     public function removeItem($id){

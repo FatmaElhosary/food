@@ -22,10 +22,13 @@ class itemsController extends Controller
     public function index(){
      //$items=item::all();
       $items = item::with('size')->latest()->get();
-    //var_dump($items); die;
+      
+   // var_dump($items); die;
      //return $items;
      //$items =item::has('size')->get();
+     
       return view('items.index',compact('items'));
+      
     }
     
     public function create(){

@@ -25,8 +25,12 @@ class AddItemRequest extends FormRequest
     {
         return [
             'name'=>'required|min:3',
-            'description'=>'required|min:3'
-           // 'price'=>'required|regex:[^[1-9]\d*$]'
+            'description'=>'required|min:3',
+          'price1'=>'required|regex:[^[1-9]\d*$]',
+          'price2'=>'required|regex:[^[1-9]\d*$]',
+          'price3'=>'required|regex:[^[1-9]\d*$]'
+
+
             
         ];
     }

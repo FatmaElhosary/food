@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/food/laravel5/resources/views/items/create.blade.php</file>
-            <file>file:/G:/food/laravel5/app/Http/Controllers/itemsController.php</file>
+            <file>file:/G:/food/laravel5/.env</file>
+            <file>file:/G:/food/laravel5/routes/web.php</file>
             <file>file:/G:/food/laravel5/resources/views/items/index.blade.php</file>
-            <file>file:/G:/food/laravel5/app/Cart.php</file>
             <file>file:/G:/food/laravel5/app/Http/Controllers/CartController.php</file>
         </group>
     </open-files>

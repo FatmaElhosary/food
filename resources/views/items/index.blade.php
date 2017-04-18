@@ -36,12 +36,14 @@
 
                     @endforeach
                     <td>
-                        {!! Form::open() !!}
+                        {!! Form::open( ) !!}
                         {!!Form::label('size','Sizes:')!!}
                         {!! Form::select('size', array('L' => 'Large', 'S' => 'Small','M'=>'Medium'))!!}
                         {!!Form::label('amount','Amount:')!!}
                         {!!Form::number('amount', '1')!!}
                         <a href=/addProduct/{{$item->id}}/>Add To cart </a>
+                       {!!Form::submit('Add to cart',['class' =>'btn btn-primary form-control'])!!}
+
                         {!! Form::close() !!}</td>
                     @endforeach
 
